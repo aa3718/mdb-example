@@ -19,4 +19,9 @@ public class StatementApplicationService implements StatementService {
 		statementRepository.save(statement);
 	}
 
+	@Override
+	public Statement getStatement(String statementId) {
+		return statementRepository.findItemById(statementId);
+	}
+
 }

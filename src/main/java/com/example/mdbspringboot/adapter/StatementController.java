@@ -1,6 +1,8 @@
 package com.example.mdbspringboot.adapter;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -22,6 +24,12 @@ public class StatementController implements StatementService {
     @ResponseStatus(HttpStatus.CREATED)
     public void addStatement(@RequestBody Statement statement) {
 		statementService.addStatement(statement);
+    }
+
+	@GetMapping("/statement/{statement_id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Statement getStatement(@PathVariable("statement_id") String statementId) {
+		return statementService.getStatement(statementId);
     }
 
 }
