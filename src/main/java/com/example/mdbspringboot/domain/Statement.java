@@ -24,18 +24,18 @@ public class Statement {
 	private Verb verb;
 	private Object object;
 
-	public class Actor {
+	public static class Actor {
 		public String objectType;
 		public String name;
 		public String mbox;
 	}
 
-	public class Verb {
+	public static class Verb {
 		public String id;
 		public String display;
 	}
 
-	public class Object {
+	public static class Object {
 		public String objectType;
 		public String id;
 	}
